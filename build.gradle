@@ -86,12 +86,12 @@ allprojects {
 
  forgix {
      group = "org.dadamalda.create.less_ticking"
-     mergedJarName = "create_lt"
+     mergedJarName = "${archives_base_name}-${mod_version}-mc${minecraft_version}"
      outputDir = "build/libs/merged"
 
      forge {
          projectName = "forge"
-         jarLocation = "build/libs/create.less_ticking-${mod_version}-mc${minecraft_version}.jar"
+         jarLocation = "build/libs/${archives_base_name}-${mod_version}-mc${minecraft_version}.jar"
 
          mixin "examplemod-common.mixins.json"
          mixin "examplemod.mixins.json"
@@ -99,6 +99,6 @@ allprojects {
 
      fabric {
          projectName = "fabric"
-         jarLocation = "build/libs/create.less_ticking-${mod_version}-mc${minecraft_version}.jar"
+         jarLocation = "build/libs/${archives_base_name}-${mod_version}-mc${minecraft_version}.jar"
      }
  }
