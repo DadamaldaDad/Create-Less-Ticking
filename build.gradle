@@ -86,7 +86,7 @@ allprojects {
 
  forgix {
      group = "org.dadamalda.create.less_ticking"
-     mergedJarName = "${archives_base_name}-${mod_version}-mc${minecraft_version}"
+     mergedJarName = "${archives_base_name}-${mod_version}-mc${minecraft_version}.jar"
      outputDir = "build/libs/merged"
 
      forge {
