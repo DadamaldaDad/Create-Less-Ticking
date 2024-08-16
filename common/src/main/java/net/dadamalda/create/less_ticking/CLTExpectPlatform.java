@@ -1,8 +1,8 @@
-package net.examplemod;
+package net.dadamalda.create.less_ticking;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 
-public class ExampleExpectPlatform {
+public class CLTExpectPlatform {
     /**
      * an example of {@link ExpectPlatform}.
      * <p>

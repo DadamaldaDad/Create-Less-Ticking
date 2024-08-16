@@ -1,35 +1,35 @@
 modLoader = "javafml"
 loaderVersion = "[${forge_version},)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
-modId = "examplemod"
+modId = "create_lt"
 version = "${version}"
-displayName = "Example Mod"
-authors = "Me!"
+displayName = "Create: Less Ticking"
+authors = "Dadamalda"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+A tiny performance mod, decreasing the rate some Create components tick at
 '''
 logoFile = "icon.png"
 
-[[dependencies.examplemod]]
+[[dependencies.create_lt]]
 modId = "forge"
 mandatory = true
 versionRange = "[${forge_version},)"
 ordering = "NONE"
-side = "BOTH"
+side = "SERVER"
 
-[[dependencies.examplemod]]
+[[dependencies.create_lt]]
 modId = "minecraft"
 mandatory = true
 versionRange = "${minecraft_version}"
 ordering = "NONE"
-side = "BOTH"
+side = "SERVER"
 
-[[dependencies.examplemod]]
+[[dependencies.create_lt]]
 modId="create"
 mandatory=true
-versionRange="${create_version}"
+versionRange="*"
 ordering="NONE"
-side="BOTH"
+side="SERVER"

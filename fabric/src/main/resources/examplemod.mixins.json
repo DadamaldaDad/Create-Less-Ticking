@@ -1,11 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.examplemod.mixin.fabric",
+  "package": "net.dadamalda.create.less_ticking.mixin",
   "compatibilityLevel": "JAVA_17",
-  "client": [
-  ],
-  "mixins": [
+  "server": [
+    "MixinFunnel",
+    "MixinFunnelImpl",
+    "MixinChuteImpl"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -2,6 +2,7 @@
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "1.5-SNAPSHOT" apply false
     id "io.github.p03w.machete" version "1.+" // automatic jar compressing on build
+     id "io.github.pacifistmc.forgix" version "1.2.9"
 }
 
 architectury {
@@ -41,6 +42,9 @@ subprojects {
 
         // see each subproject for dependencies.
     }
+
+    build.finalizedBy(mergeJars)
+    assemble.finalizedBy(mergeJars)
 }
 
 allprojects {
@@ -54,7 +58,7 @@ allprojects {
     // Formats the mod version to include the loader, Minecraft version, and build number (if present)
     // example: 1.0.0+fabric-1.18.2-100
     String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
-    version = "${mod_version}+${project.name}-${minecraft_version}" + (buildNumber != null ? "-${buildNumber}" : "")
+    version = "${mod_version}-mc${minecraft_version}"
 
     repositories {
         // Add repositories to retrieve artifacts from in here.
@@ -69,11 +73,32 @@ allprojects {
     }
 
     java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
         withSourcesJar()
     }
 
     machete {
         // disable machete locally for faster builds
-        enabled = buildNumber != null
+        enabled = true
     }
 }
+
+ forgix {
+     group = "org.dadamalda.create.less_ticking"
+     mergedJarName = "create_lt"
+     outputDir = "build/libs/merged"
+
+     forge {
+         projectName = "forge"
+         jarLocation = "build/libs/create.less_ticking-${mod_version}-mc${minecraft_version}.jar"
+
+         mixin "examplemod-common.mixins.json"
+         mixin "examplemod.mixins.json"
+     }
+
+     fabric {
+         projectName = "fabric"
+         jarLocation = "build/libs/create.less_ticking-${mod_version}-mc${minecraft_version}.jar"
+     }
+ }

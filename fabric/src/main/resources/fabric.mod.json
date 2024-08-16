@@ -1,32 +1,31 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "create_lt",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Create: Less Ticking",
+  "description": "A tiny performance mod, decreasing the rate some Create components tick at",
   "authors": [
-    "Me!"
+    "Dadamalda"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/project/create-lt",
+    "sources": "https://github.com/DadamaldaDad/Create-Less-Ticking"
   },
-  "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT",
+  "icon": "assets/create_lt/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+      "net.dadamalda.create.less_ticking.fabric.CLTFabric"
     ]
   },
   "mixins": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
+    "examplemod.mixins.json"
   ],
   "depends": {
     "minecraft": "${minecraft_version}",
     "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": ">=${fabric_api_version}",
-    "create": "${create_version}"
+    "create": "*"
   }
 }
